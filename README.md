@@ -45,8 +45,8 @@ pip install schedule
 ```
 
 * customize how often wayd runs by changing the number in schedule (it's in minutes)
-* customize the new file template by changing the string under `#if file doesn't exist` line in `wayd.py`
-* if you don't want to run this with `launchd`, you can use `cron`, too. You don't need the `.plist` file, just open `cron` with `crontab -e` from any location and put in this line:
+* customize the new file template by changing the string under `#if file doesn't exist` line in `wayd_py.py`
+
 
 ```
 */15 * * * * /path/to/your/python/executable /path/to/wayd.py
