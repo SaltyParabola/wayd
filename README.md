@@ -10,7 +10,7 @@ wayd is a python script that uses the schedule library to pop up every 20 minute
 If this is the first time wayd has run today, it creates a new file named dd-mm-yyyy.md that looks like this:
 
 > # dd-mm-yyyy
-> ***Day of the week***
+> ***Day of the week***  
 >**time:** activity
 
 Where "Day of the week" is the weekday.
