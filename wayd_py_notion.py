@@ -1,6 +1,5 @@
 import PySimpleGUI as sg
 from datetime import datetime
-from os.path import isfile
 import schedule
 import time
 import calendar
