@@ -1,51 +1,50 @@
 # what are you doing? (wayd)
 
 ![wayd](wayd.png)
-This is a python-only version of the original wayd program from spacekaila. If you have a mac, the original version is better, but this can work on windows.
+This is a python-only version of the original wayd program from spacekaila that works with the website notion.so to store all the files generated.
+This version can work on any machine that runs python, and it can interface with notion.
 
-From spacekaila:
 
-"Couldn't find a program to do what I wanted, so I built my own. Currently very hacky.
-
-wayd is a python script that uses `launchd` to pop up every 15 minutes to ask what you're doing with a text input box. Fill in your current activity and it creates/appends a markdown file named with today's date with the current time and your activity.
+wayd is a python script that uses the schedule library to pop up every 20 minutes (or a custom time period) to ask what you're doing with a text input box. Fill in your current activity and it creates/appends a markdown file named with today's date with the current time and your activity.
 
 If this is the first time wayd has run today, it creates a new file named dd-mm-yyyy.md that looks like this:
 
-> # dd.mm.yyyy
->## today i will
->>==thrive (`or your own goal`)==
->
->## ideas // thoughts // things i did
->* time: activity
+> # dd-mm-yyyy
+> ***Day of the week***
+>**time:** activity
 
-If wayd has already run or there's already a file named dd-mm-yyyy.md in the directory, then it just appends `* time: activity` to the end of the file.
+Where "Day of the week" is the weekday.
 
-You can keep the file open and add your own content to it as well, giving you a daily file with a mix of thoughts and timestamped activities."
+If wayd has already run or there's already a page named dd-mm-yyyy in the master page, then it just appends '**time:** activity' to the end of the page.
+
+You can keep the notion page open and add your own content to it as well, giving you a daily page with a mix of thoughts and timestamped activities."
 
 ## dependencies
 * PySimpleGUI
 * schedule
+* notion
 
 ## to use
-* download `wayd_py.py`
+* download `wayd_py_notion.py`
 * download dependencies with
 ```
 pip3 install PySimpleGUI
 
 pip install schedule
+
+pip install notion
 ```
-* open `wayd.py` in your text editor and set `folder_path` to where you want your files saved
-* use the Command Prompt to execute wayd_py.py
+* open `wayd_py_notion.py` in your text editor and set `token_v2` to the token_v2 value from your browser
+  * to find the token, log in to your notion account, then go to developer tools> application and look for 'token_v2'
+* set wayd_url to the url of the page you want all of your daily wayd pages to save to
+* use the Command Prompt to execute wayd_py_notion.py
 ```
 
 ## tips
 
-* find where your python executable is stored by running `where python` in the Command Prompt
-* execute the file by typing <\path\to\python\executable\> <\path\to\wayd_py.py>
-```
 
 * customize how often wayd runs by changing the number in schedule (it's in minutes)
-* customize the new file template by changing the string under `#if file doesn't exist` line in `wayd_py.py`
+* customize the new file template by changing the string under `#if file doesn't exist` line in `wayd_py_notion.py`
 
 
 ```
